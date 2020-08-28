@@ -8,8 +8,6 @@ Watch demo at: https://basemax.github.io/API-Sarrafchi/example.html
 
 **JSON Format:** API, Web-Service: https://api.sarrafchi.ir/rate/
 
-[![Sarrafchi API](demo.jpg)](https://sarrafchi.ir/en/)
-
 ### Example
 
 ```
@@ -50,6 +48,11 @@ xhttp.open("GET", "https://api.sarrafchi.ir/rate/", true);
 xhttp.send();
 </script>
 ```
+
+#### Demo in other sites
+
+[![Sarrafchi API](demo.jpg)](https://sarrafchi.ir/en/)
+
 ---------
 
 # Max Base
