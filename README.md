@@ -2,7 +2,13 @@
 
 Sarrafchi: API and web service to get live currency rates in Free Market.
 
-## Using
+Watch demo at: https://basemax.github.io/API-Sarrafchi/example.html
+
+## Sarrafchi API
+
+**JSON Format:** API, Web-Service: https://api.sarrafchi.ir/rate/
+
+### Example
 
 ```
 <div class="row">
