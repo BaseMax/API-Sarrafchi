@@ -11,6 +11,7 @@ Watch demo at: https://basemax.github.io/API-Sarrafchi/example.html
 ### Example
 
 ```
+<style>.price-box{font-size: 13px;font-weight: 500;padding: 7px;margin-bottom: 5px;text-align: center;background: #dbd2fd;border-bottom: 1px solid #9d8eca;display: block;color: #48357f;border-radius: 50px;}</style>
 <div class="row">
     <div class="col-md-4">
         <div class="price-box"><strong>US Dollar: </strong> <span id="price_usd">&#8211;</span> <small>تومان</small></div>
@@ -51,7 +52,7 @@ xhttp.send();
 
 #### Demo in other sites
 
-[![Sarrafchi API](demo.jpg)](https://sarrafchi.ir/en/)
+[![Sarrafchi API](demo.jpg)](https://basemax.github.io/API-Sarrafchi/example.html)
 
 ---------
 
