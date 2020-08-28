@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="price-box"><strong>نرخ دلار آمریکا : </strong> <span id="price_usd">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ یورو : </strong> <span id="price_euro">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ پوند انگلیس : </strong> <span id="price_pound">&#8211;</span> <small>تومان</small></div>
+    </div>
+    <div class="col-md-4">
+        <div class="price-box"><strong>نرخ فرانک سوئیس : </strong> <span id="price_franc">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ دلار کانادا : </strong> <span id="price_canad">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ دلار استرالیا : </strong> <span id="price_austr">&#8211;</span> <small>تومان</small></div>
+    </div>
+    <div class="col-md-4">
+        <div class="price-box"><strong>نرخ کرون سوئد : </strong> <span id="price_krona">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ کرون نروژ : </strong> <span id="price_norwkrona">&#8211;</span> <small>تومان</small></div>
+        <div class="price-box"><strong>نرخ روبل روسیه : </strong> <span id="price_ruble">&#8211;</span> <small>تومان</small></div>
+    </div>
+</div>
+<script type="text/javascript">
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200) {
+    	let obj = JSON.parse(this.responseText);
+    	document.querySelector("#price_usd").innerHTML=obj.currencies["US Dollar"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Euro"].sell;
+    	document.querySelector("#price_pound").innerHTML=obj.currencies["British Pound"].sell;
+    	document.querySelector("#price_franc").innerHTML=obj.currencies["Swiss Franc"].sell;
+    	document.querySelector("#price_canad").innerHTML=obj.currencies["Canadian Dollar"].sell;
+    	document.querySelector("#price_austr").innerHTML=obj.currencies["Australian Dollar"].sell;
+    	document.querySelector("#price_krona").innerHTML=obj.currencies["Swedish Krona"].sell;
+    	document.querySelector("#price_norwkrona").innerHTML=obj.currencies["Norwegian Krone"].sell;
+    	document.querySelector("#price_ruble").innerHTML=obj.currencies["Russian Ruble"].sell;
+    	/*
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Thai Baht"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Singapore Dollar"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Hong Kong Dollar"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Azerbaijani Manat"].sell;1
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Danish Krone"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["UAE Dirham"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Turkish Lira"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Chinese Yuan"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["KSA Riyal"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Indian Rupee"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Ringgit"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Afghan Afghani"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Kuwaiti Dinar"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Bahraini Dinar"].sell;
+    	document.querySelector("#price_euro").innerHTML=obj.currencies["Omani Rial"].sell;
+    	document.querySelector("#price_qatari").innerHTML=obj.currencies["Qatari Riyal"].sell;
+    	*/
+    }
+};
+xhttp.open("GET", "https://api.sarrafchi.ir/rate/", true);
+xhttp.send();
+</script>
