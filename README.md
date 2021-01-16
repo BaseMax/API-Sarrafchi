@@ -8,6 +8,11 @@ Watch demo at: https://basemax.github.io/API-Sarrafchi/example.html
 
 **JSON Format:** API, Web-Service: https://api.sarrafchi.ir/rate/
 
+#### Demo in other sites
+
+[![Sarrafchi API](demo.jpg)](https://basemax.github.io/API-Sarrafchi/example.html)
+
+
 ### Example
 
 ```
@@ -50,9 +55,13 @@ xhttp.send();
 </script>
 ```
 
-#### Demo in other sites
+### Crontab
 
-[![Sarrafchi API](demo.jpg)](https://basemax.github.io/API-Sarrafchi/example.html)
+##### $ crontab -l
+
+```
+*/5 * * * * php /path/to/dir/update.php
+```
 
 ---------
 
