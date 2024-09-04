@@ -5,18 +5,28 @@
 require "_core.php";
 include "bonbast-api/source/bonbast-api.php";
 
-$prices=bonbast();
-$data = json_encode($prices);
-
-if($data == "" || $data == null || $prices == [] || $prices == null || $data == "{}" || count($prices) == 0) {
-	exit();
+try {
+	$api = new BonBast();
+	$prices = $api->fetchPrices();
+  
+	// print_r($prices);
+	
+	$values = [
+		"data" => json_encode($data),
+		"date" => date("Y/m/d"),
+		"time" => date("H:i:s"),
+	];
+	
+	$db->insert("history", $values);
+	// print "Updated.";
+} catch (IPAddressBlockedException $e) {
+	// die($e->getMessage());
+} catch (InvalidHTTPStatusException $e) {
+	// die($e->getMessage());
+} catch (BadHomepageDataException $e) {
+	// die($e->getMessage());
+} catch (InvalidApiKeyException $e) {
+	// die($e->getMessage());
+} catch (Exception $e) {
+	// die("Invalid exception: " . $e->getMessage());
 }
-
-$values = [
-	"data"=>$data,
-	"date"=>date("Y/m/d"),
-	"time"=>date("H:i:s"),
-];
-
-$db->insert("history", $values);
-// print "Updated.";
