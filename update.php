@@ -12,7 +12,7 @@ try {
 	// print_r($prices);
 	
 	$values = [
-		"data" => json_encode($data),
+		"data" => json_encode($prices),
 		"date" => date("Y/m/d"),
 		"time" => date("H:i:s"),
 	];
