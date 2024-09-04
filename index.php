@@ -30,18 +30,22 @@ Flight::route('/rate', function(){
 
    // $prices=bonbast();
    $data = $db->select("history", [], "ORDER BY `id` DESC LIMIT 1", "data");
-   if(!isset($data["data"])) { $data=["data"=>"{}"]; }
+
+   if(!isset($data["data"])) { $data=["data"=>"{}", "date" => "-", "time" => "-"]; }
    $prices = json_decode($data["data"], true);
+
    if($prices == [] || $prices == null) {
       Flight::json([
-         "status"=>"failed",
-         "currencies"=>[],
+         "status" => "failed",
+         "currencies" => [],
       ]);
       return;
    }
    Flight::json([
-      "status"=>"success",
-      "currencies"=>$prices,
+      "status" => "success",
+      "date" => $data["date"],
+      "time" => $data["time"],
+      "currencies" => $prices,
    ]);
 });
 
