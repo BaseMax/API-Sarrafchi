@@ -10,8 +10,9 @@ ini_set('display_errors', 1);
 error_reporting(-1);
 
 $db=new database();
-$db->db="sarrafchi_db_site";
-$db->connect("127.0.0.1", "sarrafchi_user", '*****$');
+$config = require "_config.php";
+$db->db=$config["db_name"];
+$db->connect($config["db_host"], $config["db_user"], $config["db_pass"]);
 
 function strWordCut($string, $length) {
    $str_len = mb_strlen($string);
