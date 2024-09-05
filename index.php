@@ -29,7 +29,7 @@ Flight::route('/rate', function(){
    global $db;
 
    // $prices=bonbast();
-   $data = $db->select("history", [], "ORDER BY `id` DESC LIMIT 1", "data");
+   $data = $db->select("history", [], "ORDER BY `id` DESC LIMIT 1", "data, date, time");
 
    if(!isset($data["data"])) { $data=["data"=>"{}", "date" => "-", "time" => "-"]; }
    $prices = json_decode($data["data"], true);
